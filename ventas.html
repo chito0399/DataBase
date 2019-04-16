@@ -4,14 +4,55 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         
         <link href="https://fonts.googleapis.com/css?family=Raleway:300,700" rel="stylesheet">
-        <link rel="stylesheet" href="css/bootstrap.min.css">                
+        <link rel="stylesheet" href="css/bootstrap.min.css">     
+        <link href="css/styles.css" rel="stylesheet">           
         <title>Ventas</title>
         
     </head>
 
     <body>
+
+
+        <form>
+
+            <input type="text" id="username" name="username" class="input">            
+            <span class="user_label">Cliente</span>
+
+            <input type="text" id="username" name="username" class="input">            
+            <span class="user_label">Correo</span>
+
+            <input type="text" id="username" name="username" class="input">            
+            <span class="user_label">Teléfono</span>
+
+            
+            <input type="date" name="usr_time" id="datepicker">
+            <span class="user_label">Fecha</span>
+
+            <span class="user_label">Productos</span>
+
+            <section id="products" class="d-flex flex-column justify-content-center">
+                <input type="checkbox" name="vehicle1" value="Bike" class="checkbox"> I have a bike<br>
+                <input type="checkbox" name="vehicle2" value="Car" class="checkbox"> I have a car<br>
+                <input type="checkbox" name="vehicle3" value="Boat" class="checkbox"> I have a boat<br><br>
+            </section>
+            
+            
+
+
+
+        </form>
         
+        
+        <script type="text/javascript">
+            $(function(){
+                $("#datepicker").datepicker({
+                    autoclose: auto,
+                    todayHighlight: true        
+                }).datepicker('update', new Date());
+            });
+        </script>
     
+
     </body>
 
 </html>

@@ -62,3 +62,20 @@ form{
 .login_button:hover{
     background-color: rgba(6,104,160,0.5);
 }
+
+input#date{
+    background-color: transparent;
+}
+
+input.checdkbox{
+   
+    font-family: 'Raleway', sans-serif;
+    /* display: block; */
+    margin: 0 auto;
+    max-width: 300px;
+    width: 100%;
+    padding: 8px;
+    color: white;
+    font-size: 18px;
+    box-sizing: border-box;
+}
