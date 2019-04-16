@@ -1,0 +1,89 @@
+body{
+    font-family: 'Raleway';
+    margin: 0;
+    background-color: #0d77b5;
+}
+
+form{
+    max-width: 800px;
+    margin: 0 auto;
+    position: relative;
+}
+
+h4{
+    color: BLACK;
+    font-size: 30px;
+    border: black;
+}
+
+img{
+    position: absolute;
+    right: 0;
+    top: 30%;  
+
+}
+
+.input{
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid white;
+    font-family: 'Raleway', sans-serif;
+    display: block;
+    margin: 20px 0;
+    max-width: 300px;
+    width: 100%;
+    padding: 8px;
+    color: white;
+    font-size: 18px;
+    box-sizing: border-box;
+}
+
+.input:focus, input:focus{
+    outline: none;
+}
+
+.user_label{
+    color: rgba(255,255,255,0.7);
+    font-size: 12px;
+    display: block;
+    margin: -16px 0 20px 0;
+    max-width: 300px;
+    width: 100%;
+}
+
+.login_button{
+    border: 1px solid white;
+    padding: 8px 18px;
+    border-radius: 6px;
+    color: white;
+    max-width: 300px;
+    width: 100%;
+    display: block;
+    margin: 50px 0 0 0;
+    text-align: center;
+    box-sizing: border-box;
+    cursor: pointer;
+    transition: all 0.1s ease-in;
+    background-color: transparent;
+}
+
+.login_button:hover{
+    background-color: rgba(6,104,160,0.5);
+    font-size: 20px;
+}
+
+a{
+    color: transparent;
+}
+
+p{
+    color: white;
+    text-align: left;
+    font-size: 15px;
+    margin-top: 20px;
+    outline: none;
+}
+
+p:hover{
+    font-size: 20px;
+}
