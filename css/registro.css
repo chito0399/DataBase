@@ -7,12 +7,20 @@ body{
 form{
     max-width: 800px;
     margin: 0 auto;
+    position: relative;
 }
 
-.login_img{
-    max-width: 120px;
-    margin: 10% 0 0 0;
-    display: block;
+h4{
+    color: BLACK;
+    font-size: 30px;
+    border: black;
+}
+
+img{
+    position: absolute;
+    right: 0;
+    top: 30%;  
+
 }
 
 .input{
@@ -21,7 +29,7 @@ form{
     border-bottom: 1px solid white;
     font-family: 'Raleway', sans-serif;
     display: block;
-    /* margin: 20px auto; */
+    margin: 20px 0;
     max-width: 300px;
     width: 100%;
     padding: 8px;
@@ -38,7 +46,7 @@ form{
     color: rgba(255,255,255,0.7);
     font-size: 12px;
     display: block;
-    /* margin: -16px auto 20px auto; */
+    margin: -16px 0 20px 0;
     max-width: 300px;
     width: 100%;
 }
@@ -51,7 +59,7 @@ form{
     max-width: 300px;
     width: 100%;
     display: block;
-    /* margin: 50px auto 0 auto; */
+    margin: 50px 0 0 0;
     text-align: center;
     box-sizing: border-box;
     cursor: pointer;
@@ -61,26 +69,21 @@ form{
 
 .login_button:hover{
     background-color: rgba(6,104,160,0.5);
+    font-size: 20px;
 }
 
-input#datepicker{
-    background-color: transparent;
-    border-width: 1px;
+a{
+    color: transparent;
+}
+
+p{
     color: white;
-    border-color: transparent;
-    /* margin: 0 auto; */
+    text-align: left;
+    font-size: 15px;
+    margin-top: 20px;
+    outline: none;
 }
 
-section#products{
-    max-width: 300px;
-    /* margin: 0 auto; */
+p:hover{
+    font-size: 20px;
 }
-
-input#datepicker:hover{
-    
-    border-width: 1.5px;
-    color: white;
-    border-color: black;
-    /* margin: 0 auto; */
-}
-

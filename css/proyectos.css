@@ -1,0 +1,10 @@
+body{
+    font-family: 'Raleway';
+    margin: 0;
+    background-color: #0d77b5;
+}
+
+form{
+    max-width: 800px;
+    margin: 0 auto;
+}

@@ -61,18 +61,21 @@ form{
 
 .login_button:hover{
     background-color: rgba(6,104,160,0.5);
+    font-size: 20px;
 }
 
-input#datepicker{
-    background-color: transparent;
-    border-width: 1px;
+a{
+    color: transparent;
+}
+
+p{
     color: white;
-    border-color: transparent;
-    margin: 0 auto;
+    text-align: center;
+    font-size: 15px;
+    margin-top: 20px;
+    outline: none;
 }
 
-section#products{
-    max-width: 300px;
-    margin: 0 auto;
+p:hover{
+    font-size: 20px;
 }
-
