@@ -5,7 +5,7 @@
         
         <link href="https://fonts.googleapis.com/css?family=Raleway:300,700" rel="stylesheet">
         <link rel="stylesheet" href="css/bootstrap.min.css">     
-        <link href="css/styles.css" rel="stylesheet">           
+        <link href="css/venta.css" rel="stylesheet">           
         <title>Ventas</title>
         
     </head>
@@ -13,44 +13,38 @@
     <body>
 
 
-        <form>
+        <form class="mb-5">
 
-            <input type="text" id="username" name="username" class="input">            
-            <span class="user_label">Cliente</span>
+            <img src="img/venta.png" class="login_img">
 
-            <input type="text" id="username" name="username" class="input">            
-            <span class="user_label">Correo</span>
+            <input type="text" id="username" name="username" class="input mt-4" required>            
+            <span class="user_label mt-3">Cliente</span>
 
-            <input type="text" id="username" name="username" class="input">            
-            <span class="user_label">Teléfono</span>
+            <input type="email" id="username" name="username" class="input" required>            
+            <span class="user_label mt-3">Correo</span>
 
-            
-            <input type="date" name="usr_time" id="datepicker">
-            <span class="user_label">Fecha</span>
+            <input type="text" id="username" name="username" class="input" required>            
+            <span class="user_label mt-3">Teléfono</span>
 
-            <span class="user_label">Productos</span>
+            <span class="user_label my-4">Productos</span>
 
-            <section id="products" class="d-flex flex-column justify-content-center">
-                <input type="checkbox" name="vehicle1" value="Bike" class="checkbox"> I have a bike<br>
-                <input type="checkbox" name="vehicle2" value="Car" class="checkbox"> I have a car<br>
-                <input type="checkbox" name="vehicle3" value="Boat" class="checkbox"> I have a boat<br><br>
+            <section id="products" class="">
+                <input class="mb-3"type="checkbox" name="vehicle1" value="Bike"> I have a bike<br>
+                <input class="mb-3"type="checkbox" name="vehicle2" value="Car"> I have a car<br>
+                <input class="mb-3"type="checkbox" name="vehicle3" value="Boat"> I have a boat<br><br>
             </section>
+
+            <span class="user_label mt-2">Fecha</span>
+            <input type="date" name="usr_time" id="datepicker" required>
+            
+
+            
+
+            <input class="login_button my-5" type="submit"  value="Listo">
             
             
-
-
-
         </form>
-        
-        
-        <script type="text/javascript">
-            $(function(){
-                $("#datepicker").datepicker({
-                    autoclose: auto,
-                    todayHighlight: true        
-                }).datepicker('update', new Date());
-            });
-        </script>
+                  
     
 
     </body>
