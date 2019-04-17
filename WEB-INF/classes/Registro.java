@@ -4,7 +4,7 @@ import javax.servlet.http.*;
 
 import javax.servlet.annotation.WebServlet;
 
-@WebServlet("/Registro")
+@WebServlet("/registro")
 public class Registro extends HttpServlet{
 
 	public void init(ServletConfig config){
@@ -26,7 +26,7 @@ public class Registro extends HttpServlet{
             String apellido = req.getParameter("apellido");
             String username = req.getParameter("username");
             String password = req.getParameter("password");
-            int edad = Integer.paserInt(req.getParameter("edad"));
+            int edad = Integer.parseInt(req.getParameter("edad"));
             String correo = req.getParameter("correo");
             String telefono = req.getParameter("telefono");
             String direccion = req.getParameter("direccion");
@@ -40,7 +40,7 @@ public class Registro extends HttpServlet{
 
 			req.setAttribute("trabajador",newTrabajador);
 
-			RequestDispatcher disp = getServletContext().getRequestDispatcher("/process.jsp");
+			RequestDispatcher disp = getServletContext().getRequestDispatcher("/index.jsp");
 
 			if(disp!=null){
 				disp.forward(req,res);
