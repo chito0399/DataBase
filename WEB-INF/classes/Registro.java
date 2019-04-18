@@ -32,13 +32,12 @@ public class Registro extends HttpServlet{
             String direccion = req.getParameter("direccion");
             String puesto = req.getParameter("puesto");
 
-            Trabajador newTrabajador = new Trabajador(nombre, apellido, username, password, 
-                edad, correo, telefono, direccion, puesto);
+            Trabajador newTrabajador = new Trabajador(nombre, apellido, username, password, edad, correo, telefono, direccion, puesto);
 
 			res.setContentType("text/html");
-			PrintWriter out = res.getWriter();			
+			PrintWriter out = res.getWriter();
 
-			req.setAttribute("trabajador",newTrabajador);
+			req.setAttribute("trabajador", newTrabajador.nombre);
 
 			RequestDispatcher disp = getServletContext().getRequestDispatcher("/index.jsp");
 

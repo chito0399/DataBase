@@ -9,11 +9,5 @@
 	</head>
 
 	<body>
-
-		Hola <c:out value="${requestScope.res.nombre}" />
-
-	</body>
-
-
-
+		El nombre del usuario es: <c:out value = "${requestScope.trabajador}" />
 </html>
