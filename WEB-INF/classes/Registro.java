@@ -30,9 +30,25 @@ public class Registro extends HttpServlet{
             String correo = req.getParameter("correo");
             String telefono = req.getParameter("telefono");
             String direccion = req.getParameter("direccion");
-            String puesto = req.getParameter("puesto");
+			String puesto = req.getParameter("puesto");
 
-            Trabajador newTrabajador = new Trabajador(nombre, apellido, username, password, edad, correo, telefono, direccion, puesto);
+			Trabajador newTrabajador = new Trabajador(nombre, apellido, username, password, edad, correo, telefono, direccion, puesto);
+			
+
+			String base = getServletContext().getInitParameter("base");
+			String usuario = getServletContext().getInitParameter("usuario");
+            String pass = getServletContext().getInitParameter("pass");
+            
+            Class.forName("com.mysql.jdbc.Driver");
+			String url = "jdbc:mysql://localhost/"+base+"?useSSL=false&allowPublicKeyRetrieval=true";
+            Connection con = DriverManager.getConnection(url,usuario,pass);
+
+            Statement stat = con.createStatement();
+            String sql = "insert into trabajador(direccion, telefono, correo, puesto, edad, nombre, apellido, username, constrasenia) values(" + direccion + ", " + telefono + ", "  + correo + ", "  + puesto + ", "  + edad + ", "   + nombre + ", "   + apellido + ", "  + username + ", " + password +   ");";
+            
+            ResultSet result = stat.executeQuery(sql);
+
+            
 
 			res.setContentType("text/html");
 			PrintWriter out = res.getWriter();

@@ -1,3 +1,5 @@
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+
 <html>
     <head>
         <meta charset="utf-8">
@@ -29,17 +31,21 @@
             <span class="user_label my-4">Productos</span>
 
             <section id="products" class="">
-                <input class="mb-3"type="checkbox" name="vehicle1" value="Bike"> I have a bike<br>
-                <input class="mb-3"type="checkbox" name="vehicle2" value="Car"> I have a car<br>
-                <input class="mb-3"type="checkbox" name="vehicle3" value="Boat"> I have a boat<br><br>
+
+                <c:forEach items="${requestScope.venta}" var="ven">
+                    <input class="mb-3"type="checkbox" name="vehicle1" value="Bike">                    
+                    <c:out value="${ven.nombre}" />
+                    <br>
+                </c:forEach>
+
             </section>
+                <!-- <input class="mb-3"type="checkbox" name="vehicle1" value="Bike"> I have a bike<br>
+                <input class="mb-3"type="checkbox" name="vehicle2" value="Car"> I have a car<br>
+                <input class="mb-3"type="checkbox" name="vehicle3" value="Boat"> I have a boat<br><br> -->
+            
 
             <span class="user_label my-2">Fecha</span>
-            <input type="date" name="datepicker" id="datepicker" required>
-            
-
-            
-
+            <input type="date" name="datepicker" id="datepicker" required>                        
             <input class="login_button my-5" type="submit"  value="Listo">
             
             
