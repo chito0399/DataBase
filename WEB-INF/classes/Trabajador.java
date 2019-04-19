@@ -1,3 +1,4 @@
+import java.sql.*;
 public class Trabajador{
     String nombre;
     String apellido;

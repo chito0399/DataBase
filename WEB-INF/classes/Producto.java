@@ -1,3 +1,4 @@
+import java.sql.*;
 public class Producto{
     public String nombre;
     public String uso;            
