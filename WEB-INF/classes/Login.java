@@ -42,7 +42,7 @@ public class Login extends HttpServlet{
             boolean exists = false;
 
             while(result.next()){
-                int user = Integer.paseInt(result.getString("cuenta"));
+                int user = Integer.parseInt(result.getString("cuenta"));
                 String passdata = result.getString("contrasenia");
 
                 if(user == username && passdata.equals(password)){

@@ -5,11 +5,11 @@ public class Trabajador{
     Cuenta cuenta;
     int edad;
     String correo;
-    int telefono;
+    String telefono;
     String direccion;
     String puesto;
 
-    public Trabajador(String nombre, String apellido, int username, String password, int edad, String correo, int telefono, String direccion, String puesto){
+    public Trabajador(String nombre, String apellido, int username, String password, int edad, String correo, String telefono, String direccion, String puesto){
             this.nombre = nombre; 
             this.apellido = apellido; 
             this.cuenta = new Cuenta(username, password);
