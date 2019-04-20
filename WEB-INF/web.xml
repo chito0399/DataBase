@@ -27,7 +27,7 @@
 		usuario
 	</param-name> 
 	<param-value>
-		escolares
+		administradores
 	</param-value> 
 </context-param>
 
@@ -51,7 +51,7 @@
 		base
 	</param-name> 
 	<param-value>
-		Inventary
+		neszuz
 	</param-value> 
 </context-param> 
 
