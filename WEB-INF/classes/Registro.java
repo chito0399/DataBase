@@ -35,7 +35,7 @@ public class Registro extends HttpServlet{
 
 			Trabajador newTrabajador = new Trabajador(nombre, apellido, username, password, edad, correo, telefono, direccion, puesto);
 			
-
+		try{
 			String base = getServletContext().getInitParameter("base");
 			String usuario = getServletContext().getInitParameter("usuario");
             String pass = getServletContext().getInitParameter("pass");
@@ -48,15 +48,18 @@ public class Registro extends HttpServlet{
             String sql = "insert into trabajador(direccion, telefono, correo, puesto, edad, nombre, apellido, username, constrasenia) values(" + direccion + ", " + telefono + ", "  + correo + ", "  + puesto + ", "  + edad + ", "   + nombre + ", "   + apellido + ", "  + username + ", " + password +   ");";
             
             ResultSet result = stat.executeQuery(sql);
-
+        }
+        catch(Exception x){
+        	System.out.println("Hola bb");
+        }
             
 
 			res.setContentType("text/html");
 			PrintWriter out = res.getWriter();
 
-			req.setAttribute("trabajador", newTrabajador.nombre);
+			req.setAttribute("trabajador", newTrabajador);
 
-			RequestDispatcher disp = getServletContext().getRequestDispatcher("/index2.jsp");
+			RequestDispatcher disp = getServletContext().getRequestDispatcher("/index.jsp");
 
 			if(disp!=null){
 				disp.forward(req,res);

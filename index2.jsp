@@ -1,3 +1,4 @@
+<!DOCTYPE HTML>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 
 <html>
@@ -10,4 +11,5 @@
 
 	<body>
 		El nombre del usuario es: <c:out value = "${requestScope.trabajador}" />
+	</body>
 </html>
