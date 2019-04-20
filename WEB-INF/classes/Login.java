@@ -23,7 +23,7 @@ public class Login extends HttpServlet{
 
 		try{
 
-            String username = req.getParameter("username");
+            int username = Integer.parseInt(req.getParameter("username"));
             String password = req.getParameter("password");            
 
             String base = getServletContext().getInitParameter("base");
@@ -42,10 +42,10 @@ public class Login extends HttpServlet{
             boolean exists = false;
 
             while(result.next()){
-                String user = result.getString("username");
-                String passdata = result.getString("password");
+                int user = Integer.paseInt(result.getString("cuenta"));
+                String passdata = result.getString("contrasenia");
 
-                if(user.equals(username) && passdata.equals(password)){
+                if(user == username && passdata.equals(password)){
                     exists = true;
                     break;
                 }

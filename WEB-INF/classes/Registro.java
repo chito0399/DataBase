@@ -25,7 +25,7 @@ public class Registro extends HttpServlet{
 
             String nombre = req.getParameter("nombre");
             String apellido = req.getParameter("apellido");
-            String username = req.getParameter("username");
+            int username = Integer.parseInt(req.getParameter("username"));
             String password = req.getParameter("password");
             int edad = Integer.parseInt(req.getParameter("edad"));
             String correo = req.getParameter("correo");
@@ -44,13 +44,15 @@ public class Registro extends HttpServlet{
 			String url = "jdbc:mysql://localhost/"+base+"?useSSL=false&allowPublicKeyRetrieval=true";
             Connection con = DriverManager.getConnection(url,usuario,pass);
 
-            Statement stat = con.createStatement();
-            String sql = "insert into trabajador(direccion, telefono, correo, puesto, edad, nombre, apellido, username, constrasenia) values(" + direccion + ", " + telefono + ", "  + correo + ", "  + puesto + ", "  + edad + ", "   + nombre + ", "   + apellido + ", "  + username + ", " + password +   ");";
+			Statement stat = con.createStatement();
+			String sql2 = "INSERT INTO `cuenta` (`ID`,`contrasenia`) VALUES ("+ username+");";
+            String sql = "INSERT INTO `trabajador` ( `direccion`, `telefono`, `correo`, `puesto`, `edad`, `nombre`, `apellido`, `cuenta`, `constrasenia`) values(" + direccion + ", " + telefono + ", "  + correo + ", "  + puesto + ", "  + edad + ", "   + nombre + ", "   + apellido + ", "  + username + ", " + password +   ");";
             
-            ResultSet result = stat.executeQuery(sql);
+			ResultSet result = stat.executeQuery(sql);
+			System.out.println("Sí se guard el nuevo trabajador");
         }
         catch(Exception x){
-        	System.out.println("Hola bb");
+        	System.out.println("Error al ingresar un nuevo trabajador");
         }
             
 
