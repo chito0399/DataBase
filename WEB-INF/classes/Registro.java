@@ -56,7 +56,7 @@ public class Registro extends HttpServlet{
 
 			req.setAttribute("trabajador", newTrabajador.nombre);
 
-			RequestDispatcher disp = getServletContext().getRequestDispatcher("/index.jsp");
+			RequestDispatcher disp = getServletContext().getRequestDispatcher("/index2.jsp");
 
 			if(disp!=null){
 				disp.forward(req,res);

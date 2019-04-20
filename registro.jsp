@@ -49,7 +49,7 @@
             
             <input class="login_button" type="submit"  value="GUARDAR">
 
-            <a href="index.html">
+            <a href="index.jsp">
                 <p>Atrás</p>
             </a>
             

@@ -25,7 +25,7 @@
             
             <input class="login_button" type="submit"  value="LOG IN">
 
-            <a href="registro.html">
+            <a href="registro.jsp">
                 <p>Registrar usuario</p>
             </a>
             
