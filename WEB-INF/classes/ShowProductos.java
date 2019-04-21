@@ -73,6 +73,7 @@ public class ShowProductos extends HttpServlet{
     //             writer3.println(aux.ganancia);
 
 				aux.setId(res.getInt("idProducto"));
+				aux.setNombre(res.getString("nombre"));
 				aux.setUso(res.getString("Uso"));
 				aux.setFechaLlegada(res.getString("fechaDeLlegada"));
 				aux.setFechaVenta(res.getString("fechaDeVenta"));

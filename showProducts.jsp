@@ -12,6 +12,7 @@
             <tr>
                 <th>ID</th>
                 <th>Uso</th>
+                <th>Nombre</th>
                 <th>Fecha de llegada</th>
                 <th>Fecha de venta</th>
                 <th>Precio proveedor</th>
@@ -24,6 +25,10 @@
                 <tr>
                         <td>
                             <c:out value="${product.id}" />
+                            <br />
+                        </td>
+                        <td>
+                            <c:out value="${product.nombre}" />
                             <br />
                         </td>
                         <td>

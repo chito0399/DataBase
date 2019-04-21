@@ -80,6 +80,7 @@ DELETE FROM `trabajador_proyecto`;
 
 CREATE TABLE IF NOT EXISTS `producto`(
 	`idProducto` int(11) NOT NULL AUTO_INCREMENT,
+	`nombre` varchar(100) NOT NULL,
 	`Uso` varchar(100) NOT NULL,
 	`fechaDeLlegada` datetime NOT NULL,
 	`fechaDeVenta` datetime NOT NULL, 
@@ -95,9 +96,9 @@ CREATE TABLE IF NOT EXISTS `producto`(
 
 DELETE FROM `producto`;
 
-INSERT INTO `producto` (`idProducto`,`Uso`,`fechaDeLlegada`,`fechaDeVenta`,`precioProveedor`,`precioCliente`,`proveedor`,`tabla`,`ganancia`) VALUES 
-(4,'lavar','2019-04-19 10:34:09.000' ,'2020-04-19 10:34:09.000' ,120.50, 122.22,'nose',10,2.30),
-(5,'cocinar','2019-04-19 10:34:09.000' ,'2020-04-19 10:34:09.000' ,30.00, 20.00,'nose',11,10.00);
+INSERT INTO `producto` (`idProducto`,`nombre`,`Uso`,`fechaDeLlegada`,`fechaDeVenta`,`precioProveedor`,`precioCliente`,`proveedor`,`tabla`,`ganancia`) VALUES 
+(4,'SpriteAce', 'lavar','2019-04-19 10:34:09.000' ,'2020-04-19 10:34:09.000' ,120.50, 122.22,'nose',10,2.30),
+(5,'Clorox', 'cocinar','2019-04-19 10:34:09.000' ,'2020-04-19 10:34:09.000' ,30.00, 20.00,'nose',11,10.00);
 
 -- ---- TABLA DE PRODUCTOS Y TRABAJADORES ----
 
