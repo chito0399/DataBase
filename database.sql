@@ -18,8 +18,8 @@ CREATE TABLE IF NOT EXISTS `proyecto`(
 DELETE FROM `proyecto`;
 
 INSERT INTO `proyecto` (`idProyecto`,`nombre`,`fechaDeInicio`,`fechaDeTermino`,`duracion`,`descripcion`) VALUES 
-(50,'Proyecto Final',CAST(N'2019-04-19 10:34:09.000' AS DateTime),CAST(N'2020-04-19 10:34:09.000' AS DateTime),365,'Proyecto Final!'),
-(30,'Proyecto Parcial',CAST(N'2019-04-19 10:34:09.000' AS DateTime),CAST(N'2021-04-19 10:34:09.000' AS DateTime),730,'Proyecto Parcial!');
+(50,'Proyecto Final','2019-04-19 10:34:09.000' ,'2020-04-19 10:34:09.000' ,365,'Proyecto Final!'),
+(30,'Proyecto Parcial','2019-04-19 10:34:09.000' ,'2021-04-19 10:34:09.000' ,730,'Proyecto Parcial!');
 
 -- ---- TABLA DE CUENTA ----
 
@@ -96,8 +96,8 @@ CREATE TABLE IF NOT EXISTS `producto`(
 DELETE FROM `producto`;
 
 INSERT INTO `producto` (`idProducto`,`Uso`,`fechaDeLlegada`,`fechaDeVenta`,`precioProveedor`,`precioCliente`,`proveedor`,`tabla`,`ganancia`) VALUES 
-(4,'lavar',CAST(N'2019-04-19 10:34:09.000' AS DateTime),CAST(N'2020-04-19 10:34:09.000' AS DateTime),120.50, 122.22,'nose',10,2.30),
-(5,'cocinar',CAST(N'2019-04-19 10:34:09.000' AS DateTime),CAST(N'2020-04-19 10:34:09.000' AS DateTime),30.00, 20.00,'nose',11,10.00);
+(4,'lavar','2019-04-19 10:34:09.000' ,'2020-04-19 10:34:09.000' ,120.50, 122.22,'nose',10,2.30),
+(5,'cocinar','2019-04-19 10:34:09.000' ,'2020-04-19 10:34:09.000' ,30.00, 20.00,'nose',11,10.00);
 
 -- ---- TABLA DE PRODUCTOS Y TRABAJADORES ----
 
@@ -151,8 +151,8 @@ CREATE TABLE IF NOT EXISTS `venta`(
 DELETE FROM `venta`;
 
 INSERT INTO `venta` (`idVenta`,`fechaDeExpedicion`,`precioTotal`,`idCliente`,`idTrabajador`) VALUES 
-(121,CAST(N'2019-04-19 10:34:09.000' AS DateTime) ,122.22, 1, 30),
-(122,CAST(N'2019-04-19 10:34:09.000' AS DateTime) ,124.24, 2, 31);
+(121,'2019-04-19 10:34:09.000'  ,122.22, 1, 30),
+(122,'2019-04-19 10:34:09.000'  ,124.24, 2, 31);
 
 -- ---- TABLA DE PRODUCTOS Y VENTAS ----
 CREATE TABLE IF NOT EXISTS `producto_venta`(
