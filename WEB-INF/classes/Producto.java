@@ -24,33 +24,33 @@ public class Producto{
     // public int tabla;            
     // public float ganancia; 
 
-    // public Producto(String uso, String fechaLlegada, String  fechaVenta ,float precioProveedor, float precioCliente, 
-    //     String proveedor, int tabla, float ganancia){
-    //     this.uso = uso; 
-    //     this.fechaLlegada = fechaLlegada;
-    //     this.fechaVenta = fechaVenta;
-    //     this.precioProveedor = precioProveedor;
-    //     this.precioCliente = precioCliente;
-    //     this.proveedor = proveedor; 
-    //     this.tabla = tabla;
-    //     this.ganancia = ganancia;
-    // }
+    public Producto(String nombre, String uso, String fechaLlegada, String  fechaVenta ,float precioProveedor, float precioCliente, 
+        String proveedor, int tabla, float ganancia){
+        this.nombre = nombre;
+        this.uso = uso; 
+        this.fechaLlegada = fechaLlegada;
+        this.fechaVenta = fechaVenta;
+        this.precioProveedor = precioProveedor;
+        this.precioCliente = precioCliente;
+        this.proveedor = proveedor; 
+        this.tabla = tabla;
+        this.ganancia = ganancia;
+    }
 
-    // public Producto(int id, String uso, String fechaLlegada, String  fechaVenta ,float precioProveedor, float precioCliente, 
-    //     String proveedor, int tabla, float ganancia){
-    //     this.id = id;
-    //     this.uso = uso; 
-    //     this.fechaLlegada = fechaLlegada;
-    //     this.fechaVenta = fechaVenta;
-    //     this.precioProveedor = precioProveedor;
-    //     this.precioCliente = precioCliente;
-    //     this.proveedor = proveedor; 
-    //     this.tabla = tabla;
-    //     this.ganancia = ganancia;
-    // }
+    public Producto(int id,String nombre, String uso, String fechaLlegada, String  fechaVenta ,float precioProveedor, float precioCliente, 
+        String proveedor, int tabla, float ganancia){
+        this.nombre = nombre;
+        this.id = id;
+        this.uso = uso; 
+        this.fechaLlegada = fechaLlegada;
+        this.fechaVenta = fechaVenta;
+        this.precioProveedor = precioProveedor;
+        this.precioCliente = precioCliente;
+        this.proveedor = proveedor; 
+        this.tabla = tabla;
+        this.ganancia = ganancia;
+    }
     public Producto(){
-
-
     }
 
     public int getId(){
@@ -124,7 +124,4 @@ public class Producto{
     public void setGanancia(float a){
         ganancia=a;
     }
-    
-
-
 }

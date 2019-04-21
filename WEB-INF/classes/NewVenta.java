@@ -26,21 +26,20 @@ public class NewVenta extends HttpServlet{
 
 			int cliente = Integer.parseInt(request.getParameter("cliente"));
 			String correo = request.getParameter("correo");
-			int telefono = Integer.parseInt(request.getParameter("cliente"));
+			int telefono = Integer.parseInt(request.getParameter("telefono"));
 			String fecha = request.getParameter("datepicker");
 			Float precio = Float.parseFloat(request.getParameter("precio"));
 			int userTrabajador =Integer.parseInt(request.getParameter("user_trabajador"));
-			String cl = Integer.toString(cliente);
-			String tr = Integer.toString(userTrabajador);
-			String pr = Float.toString(precio);
 
 			Cliente newCliente = new Cliente(cliente, telefono, correo);
 			Venta venta = new Venta(fecha, precio, cliente, userTrabajador);
 
 			Statement stat = con.createStatement();
-			String sql = "INSERT INTO venta (fechaDeExpedicion, precioTotal, idCliente, idTrabajador) VALUES( " + fecha + ", " + pr + ", " + cl + ", "  + tr + ");";		
+			String sql = "INSERT INTO venta (fechaDeExpedicion, precioTotal, idCliente, idTrabajador) VALUES( " + fecha + ", " + precio + ", " + cliente + ", "  + userTrabajador + ");";		
+			String sql2 = "INSERT INTO cliente (ID, telefono, correo) VALUES(" + cliente + "," + telefono+ "," + correo +");";
 
 			ResultSet res2 = stat.executeQuery(sql);
+			ResultSet res = stat.executeQuery(sql2);
 
 			Vector<Venta> ventaVector = new Vector<Venta>();
 

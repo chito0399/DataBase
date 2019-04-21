@@ -17,7 +17,7 @@
 
         <h4 class="text-center mt-5 font-weight-bold">Registro de un nuevo producto</h4>
 
-        <form action="/.RegistroProducto" method="get" class="mt-5">
+        <form action="./RegistroProducto" method="get" class="mt-5">
 
             <img src="img/product.jpg" alt="">
 

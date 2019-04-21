@@ -26,7 +26,7 @@
                             <br />
                         </td>
                         <td>
-                            <c:out value="${venta.getClient()}" />
+                            <c:out value="${venta.getCliente()}" />
                             <br />
                         </td>
                         <td>
@@ -41,6 +41,6 @@
         <br>
         <br>
         <br>
-        <a href="./pass.jsp">Menu</a>
+        <a href="pass.jsp">Menu</a>
     </body>
 </html>

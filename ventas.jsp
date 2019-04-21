@@ -16,7 +16,7 @@
     <body>
 
 
-        <form action="/.NewVenta" method="get" class="mb-5">
+        <form action="./NewVenta" method="get" class="mb-5">
 
             <img src="img/venta.png" class="login_img">
 

@@ -46,10 +46,11 @@ public class Registro extends HttpServlet{
             Connection con = DriverManager.getConnection(url,usuario,pass);
 
 			Statement stat = con.createStatement();
-			String sql2 = "INSERT INTO `cuenta` (`ID`,`contrasenia`) VALUES ("+ username+");";
+			String sql2 = "INSERT INTO `cuenta` (`ID`,`contrasenia`) VALUES ("+ username+" ," +password+ ");";
             String sql = "INSERT INTO `trabajador` ( `direccion`, `telefono`, `correo`, `puesto`, `edad`, `nombre`, `apellido`, `cuenta`, `constrasenia`) values(" + direccion + ", " + telefono + ", "  + correo + ", "  + puesto + ", "  + edad + ", "   + nombre + ", "   + apellido + ", "  + username + ", " + password +   ");";
             
 			ResultSet result = stat.executeQuery(sql);
+			ResultSet result2 = stat.executeQuery(sql2);
 			System.out.println("Sí se guard el nuevo trabajador");
 			stat.close();
 			con.close();

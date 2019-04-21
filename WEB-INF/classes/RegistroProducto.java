@@ -36,8 +36,8 @@ public class RegistroProducto extends HttpServlet{
             int tabla = Integer.parseInt(req.getParameter("tabla"));            
             float ganancia = Float.parseFloat(req.getParameter("ganancia"));      
             
-            //Producto newProduct = new Producto(uso, fechaLlegada, fechaVenta, precioProveedor, precioCliente, proveedor, tabla, ganancia);
-            Producto newProduct = new Producto();
+            Producto newProduct = new Producto(uso, fechaLlegada, fechaVenta, precioProveedor, precioCliente, proveedor, tabla, ganancia);
+            //Producto newProduct = new Producto();
             try{
                 String base = getServletContext().getInitParameter("base");
                 String usuario = getServletContext().getInitParameter("usuario");
@@ -48,7 +48,7 @@ public class RegistroProducto extends HttpServlet{
                 Connection con = DriverManager.getConnection(url,usuario,pass);
     
                 Statement stat = con.createStatement();
-                String sql = "insert into producto(Uso, fechaDeLlegada, fechaDeVenta, precioProveedor, precioCliente, proveedor, tabla, ganancia) values(" + uso + ", "  + fechaLlegada + ", "  + fechaVenta + ", " + precioProveedor + ", "  + precioCliente + ", "   + proveedor + ", "   + tabla + ", "  + ganancia + ");";
+                String sql = "insert into producto(nombre, Uso, fechaDeLlegada, fechaDeVenta, precioProveedor, precioCliente, proveedor, tabla, ganancia) values(" +nombre+ ", " + uso + ", "  + fechaLlegada + ", "  + fechaVenta + ", " + precioProveedor + ", "  + precioCliente + ", "   + proveedor + ", "   + tabla + ", "  + ganancia + ");";
                 
                 ResultSet result = stat.executeQuery(sql);
 
@@ -81,7 +81,5 @@ public class RegistroProducto extends HttpServlet{
 		}
 
 	}
-
-	
 
 }
