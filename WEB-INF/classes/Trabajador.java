@@ -61,7 +61,7 @@ public class Trabajador{
         correo = a;
     }
 
-    public int getTelefono(int telefono){
+    public int getTelefono(){
         return telefono;
     }
 
