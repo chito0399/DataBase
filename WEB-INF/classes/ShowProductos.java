@@ -12,7 +12,7 @@ import javax.servlet.annotation.WebServlet;
 public class ShowProductos extends HttpServlet{
 
 
-	public void doPost(HttpServletRequest req, HttpServletResponse res){
+	public void doGet(HttpServletRequest req, HttpServletResponse res){
 
 		try{
 
