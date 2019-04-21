@@ -3,6 +3,20 @@ public class Cliente{
     private int telefono; 
     private String correo; 
 
+    public Client(){
+
+    }
+
+    public Client(int id, int telefono, String correo){
+        this.id = id; 
+        this.telefono = telefono; 
+        this.correo = correo;
+    }
+
+    public Client(int telefono, String correo){
+        this.telefono = telefono; 
+        this.correo = correo;
+    }
 
     public void setId(int id){
         this.id = id; 

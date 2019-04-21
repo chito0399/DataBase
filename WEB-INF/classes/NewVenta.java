@@ -2,8 +2,6 @@ import java.io.*;
 import javax.servlet.*;
 import javax.servlet.http.*;
 import java.sql.*;
-// import escuela.Producto;
-// import escuela.Alumno;
 import java.util.Vector;
 
 import javax.servlet.annotation.WebServlet;
@@ -26,59 +24,31 @@ public class NewVenta extends HttpServlet{
 			System.out.println(url);
 			Connection con = DriverManager.getConnection(url,usuario,password);
 
-			String cliente = req.getParameter("cliente");
+			int cliente = Integer.parseInt(req.getParameter("cliente"));
 			String correo = req.getParameter("correo");
 			int telefono = Integer.parseInt(req.getParameter("cliente"));
 			String fecha = req.getParameter("datepicker");
-			int precio = req.getParameter("precio");
+			Float precio = Float.parseFloat(req.getParameter("precio"));
 			int userTrabajador = req.getParameter("user_trabajador");
 
-			
+			Cliente newCliente = new Cliente(cliente, telefono, correo);
+			Venta venta = new Venta(fecha, precio, cliente, userTrabajador);
 
 			Statement stat = con.createStatement();
-			String sql = "SELECT * FROM trabajador";
-			String sql2 = "";		
-			
-			ResultSet res1 = stat.executeQuery(sql);
-			ResultSet res2 = stat.executeQuery(sql2);
+			String sql2 = "INSERT INTO venta (fechaDeExpedicion, precioTotal, idCliente, idTrabajador) VALUES(" + fecha + ", " + precio + ", " + cliente + ", "  + userTrabajador + ", "  ");";		
 
-			Vector<Producto> productos = new Vector<Producto>();
+			ResultSet res2 = stat.executeUpdate(sql2);
 
+			Vector<Venta> ventaVector = new Vector<Venta>();
 
-            while(res.next()){
-
-				Producto aux = new Producto();
-
-			
-
-				aux.setId(res.getInt("idProducto"));
-				aux.setNombre(res.getString("nombre"));
-				aux.setUso(res.getString("Uso"));
-				aux.setFechaLlegada(res.getString("fechaDeLlegada"));
-				aux.setFechaVenta(res.getString("fechaDeVenta"));
-				aux.setPrecioProveedor(res.getFloat("precioProveedor"));
-				aux.setPrecioCliente(res.getFloat("precioCliente"));
-				aux.setProveedor(res.getString("proveedor"));
-				aux.setTabla(res.getInt("tabla"));
-				aux.setGanancia(res.getFloat("ganancia"));
-
-
-
-				productos.add(aux);
-
-            }
-
-            writer3.println("the vector size is "+productos.size());
-            // writer3.println("hello "+productos.get(0).id);
-            // writer3.println("hello "+productos.get(1).id);
-            writer3.close();
+			ventaVector.add(venta);                        
 
 			stat.close();
             con.close();
 
-			request.setAttribute("productos", productos);
+			request.setAttribute("ventaVector", ventaVector);
 
-			RequestDispatcher disp = getServletContext().getRequestDispatcher("/showProducts.jsp");
+			RequestDispatcher disp = getServletContext().getRequestDispatcher("/showVenta.jsp");
 
 			if(disp!=null){
 				disp.forward(request, response);
