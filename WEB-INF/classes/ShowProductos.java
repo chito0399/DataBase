@@ -30,7 +30,7 @@ public class ShowProductos extends HttpServlet{
                 String pass = getServletContext().getInitParameter("pass");
                 
                 Class.forName("com.mysql.jdbc.Driver");
-                String url = "jdbc:mysql://localhost/"+base"?useSSL=false&allowPublicKeyRetrieval=true";
+                String url = "jdbc:mysql://localhost/"+base+"?useSSL=false&allowPublicKeyRetrieval=true";
                 Connection con = DriverManager.getConnection(url,usuario,pass);
                 writer.close();
 
