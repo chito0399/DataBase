@@ -29,11 +29,11 @@ public class Registro extends HttpServlet{
             String password = req.getParameter("password");
             int edad = Integer.parseInt(req.getParameter("edad"));
             String correo = req.getParameter("correo");
-            String telefono = req.getParameter("telefono");
+            int telefono = Integer.parseInt(req.getParameter("telefono"));
             String direccion = req.getParameter("direccion");
 			String puesto = req.getParameter("puesto");
 
-			Trabajador newTrabajador = new Trabajador(nombre, apellido, username, password, edad, correo, telefono, direccion, puesto);
+			Trabajador newTrabajador = new Trabajador(nombre, apellido, username, edad, correo, password, telefono, direccion, puesto);
 			
 		try{
 			String base = getServletContext().getInitParameter("base");

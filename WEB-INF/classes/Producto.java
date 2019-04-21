@@ -48,10 +48,10 @@ public class Producto{
     //     this.tabla = tabla;
     //     this.ganancia = ganancia;
     // }
-    // public Producto(){
+    public Producto(){
 
 
-    // }
+    }
 
     public int getId(){
         return id;

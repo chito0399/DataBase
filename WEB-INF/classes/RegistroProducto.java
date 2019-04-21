@@ -36,8 +36,8 @@ public class RegistroProducto extends HttpServlet{
             int tabla = Integer.parseInt(req.getParameter("tabla"));            
             float ganancia = Float.parseFloat(req.getParameter("ganancia"));      
             
-            Producto newProduct = new Producto(uso, fechaLlegada, fechaVenta, precioProveedor, precioCliente, proveedor, tabla, ganancia);
-
+            //Producto newProduct = new Producto(uso, fechaLlegada, fechaVenta, precioProveedor, precioCliente, proveedor, tabla, ganancia);
+            Producto newProduct = new Producto();
             try{
                 String base = getServletContext().getInitParameter("base");
                 String usuario = getServletContext().getInitParameter("usuario");
