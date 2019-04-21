@@ -3,6 +3,8 @@ import java.io.*;
 import javax.servlet.*;
 import javax.servlet.http.*;
 import java.util.Vector;
+import java.text.SimpleDateFormat;  
+import java.util.Date;
 
 import javax.servlet.annotation.WebServlet;
 
@@ -23,7 +25,7 @@ public class ShowProductos extends HttpServlet{
 	public void doGet(HttpServletRequest req, HttpServletResponse res){
 
 		try{
-
+			ResultSet result = null;
             try{
                 String base = getServletContext().getInitParameter("base");
                 String usuario = getServletContext().getInitParameter("usuario");
@@ -36,34 +38,37 @@ public class ShowProductos extends HttpServlet{
                 Statement stat = con.createStatement();                
                 String sql = "SELECT * from `producto`";
                 
-                ResultSet result = stat.executeQuery(sql);
+                result = stat.executeQuery(sql);
                 System.out.println("Sí se despliega todo de producto");
+
+                stat.close();
+            	con.close();
+
             }
             catch(Exception x){
                 System.out.println("Error al ver los productos en la base de datos");
             }
             
             Vector<Producto> productos = new Vector<Producto>();
-            while(res.next()){
+            while(result.next()){
 
-				Alumno aux = new Alumno();
+				Producto aux = new Producto();
 
-				aux.id(res.getString("idProducto"));
-				aux.uso(res.getString("Uso"));
-				aux.fechaLlegada(res.getString("fechaDeLlegada"));
-                aux.fechaVenta(res.getInt("fechaDeVenta"));                
-                aux.precioProveedor(res.getInt("precioProveedor"));
-                aux.precioCliente(res.getInt("precioCliente"));
-                aux.proveedor(res.getInt("proveedor"));
-                aux.tabla(res.getInt("tabla"));
-                aux.ganancia(res.getInt("ganancia"));
+				aux.id = Integer.parseInt(result.getString("idProducto"));
+				aux.uso = result.getString("Uso");
+				aux.fechaLlegada = new SimpleDateFormat("dd/MM/yyyy").parse(result.getString("fechaDeLlegada"));
+				//Integer.parseInt(result.getString("fechaDeLlegada"));
+                aux.fechaVenta = new SimpleDateFormat("dd/MM/yyyy").parse(result.getString("fechaDeVenta"));
+                //Integer.parseInt(result.getString("fechaDeVenta"));                
+                aux.precioProveedor = Float.parseFloat(result.getString("precioProveedor"));
+                aux.precioCliente = Float.parseFloat(result.getString("precioCliente"));
+                aux.proveedor = result.getString("proveedor");
+                aux.tabla = Integer.parseInt(result.getString("tabla"));
+                aux.ganancia = Float.parseFloat(result.getString("ganancia"));
 
 				productos.add(aux);
 
             }
-            
-            stat.close();
-            con.close();
 
 			res.setContentType("text/html");
 			PrintWriter out = res.getWriter();

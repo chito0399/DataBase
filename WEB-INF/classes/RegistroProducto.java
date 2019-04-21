@@ -3,6 +3,7 @@ import java.text.SimpleDateFormat;
 import java.io.*;
 import javax.servlet.*;
 import javax.servlet.http.*;
+import java.util.Date;
 
 import javax.servlet.annotation.WebServlet;
 
@@ -31,7 +32,8 @@ public class RegistroProducto extends HttpServlet{
 
             SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
 
-            Date llegada = sdf.parse(fechallegada);
+            Date llegada = new Date();
+            llegada = sdf.parse(fechaLlegada);
             Date venta = sdf.parse(fechaVenta);
 
             float precioProveedor = Float.parseFloat(req.getParameter("Pproveedor")) ;            
@@ -57,15 +59,15 @@ public class RegistroProducto extends HttpServlet{
                 ResultSet result = stat.executeQuery(sql);
 
                 System.out.println("se agrego el nuevo producto");
+
+                stat.close();
+            	con.close();
+
             }catch(Exception ex){
                 ex.printStackTrace();
                 System.out.println("no se agrego el nuevo producto");
             }
-            
 
-            stat.close();
-            con.close();
-            
             res.setContentType("text/html");
 			PrintWriter out = res.getWriter();
 

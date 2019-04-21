@@ -50,13 +50,13 @@ public class Registro extends HttpServlet{
             
 			ResultSet result = stat.executeQuery(sql);
 			System.out.println("Sí se guard el nuevo trabajador");
+			stat.close();
+			con.close();
         }
         catch(Exception x){
         	System.out.println("Error al ingresar un nuevo trabajador");
         }
             
-			stat.close();
-			con.close();
 			res.setContentType("text/html");
 			PrintWriter out = res.getWriter();
 
