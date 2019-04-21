@@ -1,19 +1,33 @@
 import java.sql.*;
 public class Producto{
-    public String nombre;
+    public int id;
     public String uso;            
-    public String fechaLlegada;  
+    public Date fechaLlegada;  
+    public Date fechaVenta;
     public float precioProveedor;            
     public float precioCliente;            
     public String proveedor;                      
-    public String tabla;            
+    public int tabla;            
     public float ganancia;       
 
-    public Producto(String nombre, String uso, String fechaLlegada, float precioProveedor, float precioCliente, 
-        String proveedor, String tabla, float ganancia){
-        this.nombre = nombre; 
+    public Producto(String uso, Date fechaLlegada, Date  fechaVenta ,float precioProveedor, float precioCliente, 
+        String proveedor, int tabla, float ganancia){
         this.uso = uso; 
         this.fechaLlegada = fechaLlegada;
+        this.fechaVenta = fechaVenta;
+        this.precioProveedor = precioProveedor;
+        this.precioCliente = precioCliente;
+        this.proveedor = proveedor; 
+        this.tabla = tabla;
+        this.ganancia = ganancia;
+    }
+
+    public Producto(int id, String uso, Date fechaLlegada, Date  fechaVenta ,float precioProveedor, float precioCliente, 
+        String proveedor, int tabla, float ganancia){
+        this.id = id;
+        this.uso = uso; 
+        this.fechaLlegada = fechaLlegada;
+        this.fechaVenta = fechaVenta;
         this.precioProveedor = precioProveedor;
         this.precioCliente = precioCliente;
         this.proveedor = proveedor; 

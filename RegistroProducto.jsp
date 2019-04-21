@@ -15,7 +15,7 @@
 
     <body>
 
-        <h4 class="text-center mt-5 font-weight-bold">Registro de un nuevo prodducto</h4>
+        <h4 class="text-center mt-5 font-weight-bold">Registro de un nuevo producto</h4>
 
         <form action="/.RegistroProducto" method="get" class="mt-5">
 
@@ -29,6 +29,9 @@
             
             <input type="date" id="fecha" name="fecha" class="input" required>            
             <span class="user_label">Fecha de llegada</span>
+
+            <input type="date" id="fechaVenta" name="fechaVenta" class="input" required>            
+            <span class="user_label">Fecha de venta</span>
 
             <input type="text" id="Pproveedor" name="Pproveedor" class="input" required>            
             <span class="user_label">Precio proveedor</span>
@@ -48,7 +51,7 @@
                    
             <input class="login_button" type="submit"  value="GUARDAR">
 
-            <a href="pass.html">
+            <a href="pass.jsp">
                 <p>Atrás</p>
             </a>
             

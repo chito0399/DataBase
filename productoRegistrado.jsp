@@ -15,7 +15,10 @@
         Uso: <c:out value = "${requestScope.producto.uso}" />
         <br>
 
-        La fecha de llegada es: <c:out value = "${requestScope.producto.fechaLlegada}" />
+        La fecha de llegada es: <c:out value = "${requestScope.producto.llegada}" />
+        <br>
+
+        La fecha de venta es: <c:out value = "${requestScope.producto.venta}" />
         <br>
         
         El precio de proveedor es: <c:out value = "${requestScope.producto.precioProveedor}" />
@@ -32,6 +35,16 @@
 
         La ganancia es: <c:out value = "${requestScope.producto.ganancia}" />
         <br>
+
+<!-- 
+        <c:forEach items="${requestScope.producto}" var="product">
+	  
+            <c:out value="${product.nombre}" />
+            
+            <c:out value="${al.edad}" />
+      	
+        
+        </c:forEach> -->
 
 
         <a href="pass.jsp">

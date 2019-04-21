@@ -55,7 +55,8 @@ public class Registro extends HttpServlet{
         	System.out.println("Error al ingresar un nuevo trabajador");
         }
             
-
+			stat.close();
+			con.close();
 			res.setContentType("text/html");
 			PrintWriter out = res.getWriter();
 

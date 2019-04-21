@@ -16,6 +16,7 @@
             }
             section{
                 min-height: 100%;
+                margin-top: 80px;
             }
         </style>
 
@@ -25,14 +26,16 @@
 
     <body>
 
-        <section class="row justify-content-center align-items-center mx-0">
-
 
             <br> <br>
             <H1> 
-
                 El nombre del usuario es: <c:out value = "${requestScope.trabajador}" />
             </H1>
+
+        <section class="row justify-content-center align-items-center mx-0">
+
+
+            
 
             
             <form action="" method="get" >                  
@@ -44,23 +47,36 @@
                     </div>
                 </div>                                        
             </form>
-            
+
             <form action="" method="get">
                 <div class="card text-white bg-secondary my-0 ml-5" style="max-width: 18rem;">
                     <h5 class="card-header card-title">Mis proyectos</h5>
                     <div class="card-body">
-                        <p class="card-text">Revisa los proyectos en los que estás envuelto y haz las modificaciones necesarias</p>
+                        <p class="card-text">Revisa los proyectos en los que estas envuelto y haz las modificaciones necesarias</p>
                         <input class="proyecto_buton btn btn-success" type="submit"  value="Proyectos">
                     </div>
                 </div>
             </form>
 
-            <form action="" method="get">
-                    <div class="card text-white bg-secondary my-0 ml-5" style="max-width: 18rem;">
-                        <h5 class="card-header card-title">Nuevo producto</h5>
-                        <div class="card-body">
-                            <p class="card-text">Con esta función puedes agregar un nuevo producto a la tienda y ponerlo a la venta.</p>
+            <section class="mt-0">
+                <div class="card text-white bg-secondary my-0 ml-5" style="max-width: 18rem;">
+                    <h5 class="card-header card-title">Nuevo producto</h5>
+                    <div class="card-body">
+                        <p class="card-text">Con esta funcion puedes agregar un nuevo producto a la tienda y ponerlo a la venta.</p>
+                        <a href="RegistroProducto.jsp">
                             <input class="proyecto_buton btn btn-success" type="submit"  value="Agregar">
+                        </a>
+                        
+                    </div>
+                </div>
+            </section>
+
+            <form action="/.showProducts" method="get">
+                    <div class="card text-white bg-secondary my-0 ml-5" style="max-width: 18rem;">
+                        <h5 class="card-header card-title">Ver productos</h5>
+                        <div class="card-body">
+                            <p class="card-text">Con esta funcion puedes ver todos los productos que estan en la tienda y la descripcion de cada uno.</p>
+                            <input class="proyecto_buton btn btn-success" type="submit"  value="Ver">
                         </div>
                     </div>
                 </form>

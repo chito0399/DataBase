@@ -1,4 +1,5 @@
 import java.sql.*;
+import java.text.SimpleDateFormat;
 import java.io.*;
 import javax.servlet.*;
 import javax.servlet.http.*;
@@ -26,26 +27,41 @@ public class RegistroProducto extends HttpServlet{
             String nombre = req.getParameter("nombre");
             String uso = req.getParameter("uso");            
             String fechaLlegada = req.getParameter("fecha");  
+            String fechaVenta = req.getParameter("fechaVenta");
+
+            SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+
+            Date llegada = sdf.parse(fechallegada);
+            Date venta = sdf.parse(fechaVenta);
+
             float precioProveedor = Float.parseFloat(req.getParameter("Pproveedor")) ;            
             float precioCliente = Float.parseFloat(req.getParameter("cliente"));            
             String proveedor = req.getParameter("proveedor");                      
-            String tabla = req.getParameter("tabla");            
+            int tabla = Integer.parseInt(req.getParameter("tabla"));            
             float ganancia = Float.parseFloat(req.getParameter("ganancia"));      
             
-            Producto newProduct = new Producto(nombre, uso, fechaLlegada, precioProveedor, precioCliente, proveedor, tabla, ganancia);
+            Producto newProduct = new Producto(uso, llegada, venta, precioProveedor, precioCliente, proveedor, tabla, ganancia);
 
-            String base = getServletContext().getInitParameter("base");
-			String usuario = getServletContext().getInitParameter("usuario");
-            String pass = getServletContext().getInitParameter("pass");
-            
-            Class.forName("com.mysql.jdbc.Driver");
-			String url = "jdbc:mysql://localhost/"+base+"?useSSL=false&allowPublicKeyRetrieval=true";
-            Connection con = DriverManager.getConnection(url,usuario,pass);
+            try{
+                String base = getServletContext().getInitParameter("base");
+                String usuario = getServletContext().getInitParameter("usuario");
+                String pass = getServletContext().getInitParameter("pass");
+                
+                Class.forName("com.mysql.jdbc.Driver");
+                String url = "jdbc:mysql://localhost/"+base+"?useSSL=false&allowPublicKeyRetrieval=true";
+                Connection con = DriverManager.getConnection(url,usuario,pass);
+    
+                Statement stat = con.createStatement();
+                String sql = "insert into producto(Uso, fechaDeLlegada, fechaDeVenta, precioProveedor, precioCliente, proveedor, tabla, ganancia) values(" + uso + ", "  + llegada + ", "  + venta + ", " + precioProveedor + ", "  + precioCliente + ", "   + proveedor + ", "   + tabla + ", "  + ganancia + ");";
+                
+                ResultSet result = stat.executeQuery(sql);
 
-            Statement stat = con.createStatement();
-            String sql = "insert into producto(nombre, uso, fechaLlegada, precioProveedor, precio_cliente, proveedor, tabla, ganancia) values(" + nombre + ", " + uso + ", "  + fechaLlegada + ", "  + precioProveedor + ", "  + precioCliente + ", "   + proveedor + ", "   + tabla + ", "  + ganancia + ");";
+                System.out.println("se agrego el nuevo producto");
+            }catch(Exception ex){
+                ex.printStackTrace();
+                System.out.println("no se agrego el nuevo producto");
+            }
             
-            ResultSet result = stat.executeQuery(sql);
 
             stat.close();
             con.close();
