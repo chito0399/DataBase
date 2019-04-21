@@ -24,20 +24,23 @@ public class NewVenta extends HttpServlet{
 			System.out.println(url);
 			Connection con = DriverManager.getConnection(url,usuario,password);
 
-			int cliente = Integer.parseInt(req.getParameter("cliente"));
-			String correo = req.getParameter("correo");
-			int telefono = Integer.parseInt(req.getParameter("cliente"));
-			String fecha = req.getParameter("datepicker");
-			Float precio = Float.parseFloat(req.getParameter("precio"));
-			int userTrabajador = req.getParameter("user_trabajador");
+			int cliente = Integer.parseInt(request.getParameter("cliente"));
+			String correo = request.getParameter("correo");
+			int telefono = Integer.parseInt(request.getParameter("cliente"));
+			String fecha = request.getParameter("datepicker");
+			Float precio = Float.parseFloat(request.getParameter("precio"));
+			int userTrabajador =Integer.parseInt(request.getParameter("user_trabajador"));
+			String cl = Integer.toString(cliente);
+			String tr = Integer.toString(userTrabajador);
+			String pr = Float.toString(precio);
 
 			Cliente newCliente = new Cliente(cliente, telefono, correo);
 			Venta venta = new Venta(fecha, precio, cliente, userTrabajador);
 
 			Statement stat = con.createStatement();
-			String sql2 = "INSERT INTO venta (fechaDeExpedicion, precioTotal, idCliente, idTrabajador) VALUES(" + fecha + ", " + precio + ", " + cliente + ", "  + userTrabajador + ", "  ");";		
+			String sql = "INSERT INTO venta (fechaDeExpedicion, precioTotal, idCliente, idTrabajador) VALUES( " + fecha + ", " + pr + ", " + cl + ", "  + tr + ");";		
 
-			ResultSet res2 = stat.executeUpdate(sql2);
+			ResultSet res2 = stat.executeQuery(sql);
 
 			Vector<Venta> ventaVector = new Vector<Venta>();
 
@@ -45,6 +48,9 @@ public class NewVenta extends HttpServlet{
 
 			stat.close();
             con.close();
+
+            response.setContentType("text/html");
+            PrintWriter out = response.getWriter();
 
 			request.setAttribute("ventaVector", ventaVector);
 

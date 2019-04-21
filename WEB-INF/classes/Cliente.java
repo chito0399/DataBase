@@ -3,17 +3,17 @@ public class Cliente{
     private int telefono; 
     private String correo; 
 
-    public Client(){
+    public Cliente(){
 
     }
 
-    public Client(int id, int telefono, String correo){
+    public Cliente(int id, int telefono, String correo){
         this.id = id; 
         this.telefono = telefono; 
         this.correo = correo;
     }
 
-    public Client(int telefono, String correo){
+    public Cliente(int telefono, String correo){
         this.telefono = telefono; 
         this.correo = correo;
     }
