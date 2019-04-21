@@ -16,7 +16,7 @@
     <body>
 
 
-        <form class="mb-5">
+        <form action="/.NewVenta" method="get" class="mb-5">
 
             <img src="img/venta.png" class="login_img">
 
@@ -31,7 +31,7 @@
 
             <span class="user_label my-4">Productos</span>
 
-            <section id="products" class="">
+            <!-- <section id="products" class="">
 
                 <c:forEach items="${requestScope.venta}" var="ven">
                     <input class="mb-3"type="checkbox" name="vehicle1" value="Bike">                    
@@ -39,11 +39,17 @@
                     <br>
                 </c:forEach>
 
-            </section>
+            </section> -->
                 <!-- <input class="mb-3"type="checkbox" name="vehicle1" value="Bike"> I have a bike<br>
                 <input class="mb-3"type="checkbox" name="vehicle2" value="Car"> I have a car<br>
                 <input class="mb-3"type="checkbox" name="vehicle3" value="Boat"> I have a boat<br><br> -->
             
+            
+            <input type="text" id="precio" name="precio" class="input" required>            
+            <span class="user_label mt-3">Precio</span>
+
+            <input type="text" id="user_trabajador" name="user_trabajador" class="input" required>            
+            <span class="user_label mt-3">Username trabajador</span>
 
             <span class="user_label my-2">Fecha</span>
             <input type="date" name="datepicker" id="datepicker" required>                        

@@ -38,15 +38,17 @@
             
 
             
-            <form action="" method="get" >                  
+            <section class="mt-0">                  
                 <div class="card text-white bg-secondary my-0 mr-5" style="max-width: 18rem;">
                     <h5 class="card-header card-title">Hacer una nueva venta</h5>
                     <div class="card-body">
                         <p class="card-text">Realiza una venta a un nuevo cliente. Ingresa todos los datos necesarios.</p>
-                        <input class="venta_buton btn btn-success" type="submit"  value="Venta">
+                        <a href="ventas.jsp">
+                            <input class="proyecto_buton btn btn-success" type="submit"  value="Venta">
+                        </a>                        
                     </div>
                 </div>                                        
-            </form>
+            </section>
 
             <form action="" method="get">
                 <div class="card text-white bg-secondary my-0 ml-5" style="max-width: 18rem;">
