@@ -1,13 +1,13 @@
 import java.sql.*;
 public class Trabajador{
-    String nombre;
-    String apellido;
-    Cuenta cuenta;
-    int edad;
-    String correo;
-    int telefono;
-    String direccion;
-    String puesto;
+    private String nombre;
+    private String apellido;
+    private Cuenta cuenta;
+    private int edad;
+    private String correo;
+    private int telefono;
+    private String direccion;
+    private String puesto;
 
     public Trabajador(String nombre, String apellido, Cuenta cuenta, int edad, String correo, int telefono, String direccion, String puesto){
             this.nombre = nombre; 
