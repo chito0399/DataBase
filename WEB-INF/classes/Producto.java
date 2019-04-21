@@ -2,15 +2,15 @@ import java.sql.*;
 public class Producto{
     public int id;
     public String uso;            
-    public Date fechaLlegada;  
-    public Date fechaVenta;
+    public String fechaLlegada;  
+    public String fechaVenta;
     public float precioProveedor;            
     public float precioCliente;            
     public String proveedor;                      
     public int tabla;            
     public float ganancia;       
 
-    public Producto(String uso, Date fechaLlegada, Date  fechaVenta ,float precioProveedor, float precioCliente, 
+    public Producto(String uso, String fechaLlegada, String  fechaVenta ,float precioProveedor, float precioCliente, 
         String proveedor, int tabla, float ganancia){
         this.uso = uso; 
         this.fechaLlegada = fechaLlegada;
@@ -22,7 +22,7 @@ public class Producto{
         this.ganancia = ganancia;
     }
 
-    public Producto(int id, String uso, Date fechaLlegada, Date  fechaVenta ,float precioProveedor, float precioCliente, 
+    public Producto(int id, String uso, String fechaLlegada, String  fechaVenta ,float precioProveedor, float precioCliente, 
         String proveedor, int tabla, float ganancia){
         this.id = id;
         this.uso = uso; 

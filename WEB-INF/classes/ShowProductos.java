@@ -56,10 +56,8 @@ public class ShowProductos extends HttpServlet{
 
 				aux.id = Integer.parseInt(result.getString("idProducto"));
 				aux.uso = result.getString("Uso");
-				aux.fechaLlegada = new SimpleDateFormat("dd/MM/yyyy").parse(result.getString("fechaDeLlegada"));
-				//Integer.parseInt(result.getString("fechaDeLlegada"));
-                aux.fechaVenta = new SimpleDateFormat("dd/MM/yyyy").parse(result.getString("fechaDeVenta"));
-                //Integer.parseInt(result.getString("fechaDeVenta"));                
+				aux.fechaLlegada = result.getString("fechaDeLlegada");
+                aux.fechaVenta = result.getString("fechaDeVenta");               
                 aux.precioProveedor = Float.parseFloat(result.getString("precioProveedor"));
                 aux.precioCliente = Float.parseFloat(result.getString("precioCliente"));
                 aux.proveedor = result.getString("proveedor");

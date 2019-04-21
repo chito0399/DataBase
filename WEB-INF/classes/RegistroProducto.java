@@ -30,19 +30,13 @@ public class RegistroProducto extends HttpServlet{
             String fechaLlegada = req.getParameter("fecha");  
             String fechaVenta = req.getParameter("fechaVenta");
 
-            SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
-
-            Date llegada = new Date();
-            llegada = sdf.parse(fechaLlegada);
-            Date venta = sdf.parse(fechaVenta);
-
             float precioProveedor = Float.parseFloat(req.getParameter("Pproveedor")) ;            
             float precioCliente = Float.parseFloat(req.getParameter("cliente"));            
             String proveedor = req.getParameter("proveedor");                      
             int tabla = Integer.parseInt(req.getParameter("tabla"));            
             float ganancia = Float.parseFloat(req.getParameter("ganancia"));      
             
-            Producto newProduct = new Producto(uso, llegada, venta, precioProveedor, precioCliente, proveedor, tabla, ganancia);
+            Producto newProduct = new Producto(uso, fechaLlegada, fechaVenta, precioProveedor, precioCliente, proveedor, tabla, ganancia);
 
             try{
                 String base = getServletContext().getInitParameter("base");
@@ -54,7 +48,7 @@ public class RegistroProducto extends HttpServlet{
                 Connection con = DriverManager.getConnection(url,usuario,pass);
     
                 Statement stat = con.createStatement();
-                String sql = "insert into producto(Uso, fechaDeLlegada, fechaDeVenta, precioProveedor, precioCliente, proveedor, tabla, ganancia) values(" + uso + ", "  + llegada + ", "  + venta + ", " + precioProveedor + ", "  + precioCliente + ", "   + proveedor + ", "   + tabla + ", "  + ganancia + ");";
+                String sql = "insert into producto(Uso, fechaDeLlegada, fechaDeVenta, precioProveedor, precioCliente, proveedor, tabla, ganancia) values(" + uso + ", "  + fechaLlegada + ", "  + fechaVenta + ", " + precioProveedor + ", "  + precioCliente + ", "   + proveedor + ", "   + tabla + ", "  + ganancia + ");";
                 
                 ResultSet result = stat.executeQuery(sql);
 
