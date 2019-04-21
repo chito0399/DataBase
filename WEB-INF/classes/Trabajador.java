@@ -2,34 +2,25 @@ import java.sql.*;
 public class Trabajador{
     String nombre;
     String apellido;
-    int cuenta;
+    Cuenta cuenta;
     int edad;
     String correo;
     int telefono;
     String direccion;
     String puesto;
-    String password;
 
-    public Trabajador(String nombre, String apellido, int cuenta, int edad, String correo, String password, int telefono, String direccion, String puesto){
+    public Trabajador(String nombre, String apellido, Cuenta cuenta, int edad, String correo, int telefono, String direccion, String puesto){
             this.nombre = nombre; 
             this.apellido = apellido; 
             this.cuenta = cuenta;
             this.edad = edad; 
             this.correo = correo;
-            this.password = password;
             this.telefono = telefono; 
             this.direccion = direccion; 
             this.puesto = puesto;
     }
 
-    public String getPassword(){
-        return password;
-    }
 
-    public void setPassword(String a){
-        password = a;
-    }
-    
     public String getNombre(){
         return nombre;
     }
@@ -46,11 +37,11 @@ public class Trabajador{
         apellido = a;
     }
 
-    public int getCuenta(){
+    public Cuenta getCuenta(){
         return cuenta;
     }
 
-    public void setCuenta(int a){
+    public void setCuenta(Cuenta a){
         cuenta = a;
     }
 
