@@ -11,43 +11,40 @@ import javax.servlet.annotation.WebServlet;
 @WebServlet("/showProducts")
 public class ShowProductos extends HttpServlet{
 
-	public void init(ServletConfig config){
-		try{
-			super.init(config);
-		}
-		catch(Exception e){
-			e.printStackTrace();
-		}
-		
-		
-	}
 
-	public void doGet(HttpServletRequest req, HttpServletResponse res){
+	public void doPost(HttpServletRequest req, HttpServletResponse res){
 
 		try{
+
+			PrintWriter writer = new PrintWriter("/Users/alanzavala/Desktop/DBCurso/proyecto1.txt", "UTF-8");
+			PrintWriter writer2 = new PrintWriter("/Users/alanzavala/Desktop/DBCurso/proyecto2.txt", "UTF-8");
+			PrintWriter writer3 = new PrintWriter("/Users/alanzavala/Desktop/DBCurso/proyecto3.txt", "UTF-8");
+
+			writer.println("The first line");
+			writer.println("The second line");
+
 			ResultSet result = null;
-            try{
+            	
                 String base = getServletContext().getInitParameter("base");
                 String usuario = getServletContext().getInitParameter("usuario");
                 String pass = getServletContext().getInitParameter("pass");
                 
                 Class.forName("com.mysql.jdbc.Driver");
-                String url = "jdbc:mysql://localhost/"+base+"?useSSL=false&allowPublicKeyRetrieval=true";
+                String url = "jdbc:mysql://localhost/"+base"?useSSL=false&allowPublicKeyRetrieval=true";
                 Connection con = DriverManager.getConnection(url,usuario,pass);
+                writer.close();
 
                 Statement stat = con.createStatement();                
-                String sql = "SELECT * from `producto`";
+                String sql = "SELECT * from producto";
                 
                 result = stat.executeQuery(sql);
                 System.out.println("Sí se despliega todo de producto");
+                writer2.println(sql);
+				writer2.close();
 
-                stat.close();
-            	con.close();
+                
 
-            }
-            catch(Exception x){
-                System.out.println("Error al ver los productos en la base de datos");
-            }
+            
             
             Vector<Producto> productos = new Vector<Producto>();
             while(result.next()){
@@ -68,8 +65,8 @@ public class ShowProductos extends HttpServlet{
 
             }
 
-			res.setContentType("text/html");
-			PrintWriter out = res.getWriter();
+			stat.close();
+            con.close();
 
 			req.setAttribute("productos", productos);
 
@@ -80,7 +77,15 @@ public class ShowProductos extends HttpServlet{
 			}
 		}
 		catch(Exception e){
-			e.printStackTrace();
+			try{
+				PrintWriter writer4 = new PrintWriter("/Users/alanzavala/Desktop/DBCurso/proyecto4.txt", "UTF-8");
+				e.printStackTrace();
+				writer4.println(e);
+				writer4.close();
+			}
+			catch(Exception e2){
+				e2.printStackTrace();
+			}
 		}
 
 	}

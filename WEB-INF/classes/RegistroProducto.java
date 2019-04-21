@@ -77,6 +77,7 @@ public class RegistroProducto extends HttpServlet{
 		}
 		catch(Exception e){
 			e.printStackTrace();
+          
 		}
 
 	}
