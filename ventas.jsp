@@ -16,7 +16,7 @@
     <body>
 
 
-        <form class="mb-5">
+        <form action="./" method="get" class="mb-5">
 
             <img src="img/venta.png" class="login_img">
 
