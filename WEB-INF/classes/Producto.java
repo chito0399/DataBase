@@ -3,6 +3,7 @@
 
 public class Producto{
     private int id;
+    private String nombre;
     private String uso;            
     private String fechaLlegada;  
     private String fechaVenta;
@@ -58,6 +59,13 @@ public class Producto{
 
     public void setId(int a){
         id=a;
+    }
+    public String getNombre(){
+        return nombre;
+    }
+
+    public void setNombre(String a){
+        nombre=a;
     }
     public String getUso(){
         return uso;
