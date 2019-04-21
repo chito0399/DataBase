@@ -29,11 +29,12 @@ public class Registro extends HttpServlet{
             String password = req.getParameter("password");
             int edad = Integer.parseInt(req.getParameter("edad"));
             String correo = req.getParameter("correo");
-            String telefono = req.getParameter("telefono");
+            int telefono = Integer.parseInt(req.getParameter("telefono"));
             String direccion = req.getParameter("direccion");
 			String puesto = req.getParameter("puesto");
 
-			Trabajador newTrabajador = new Trabajador(nombre, apellido, username, password, edad, correo, telefono, direccion, puesto);
+			Cuenta cuenta = new Cuenta(username, password);
+			Trabajador newTrabajador = new Trabajador(nombre, apellido, cuenta, edad, correo, telefono, direccion, puesto);
 			
 		try{
 			String base = getServletContext().getInitParameter("base");
@@ -45,10 +46,12 @@ public class Registro extends HttpServlet{
             Connection con = DriverManager.getConnection(url,usuario,pass);
 
 			Statement stat = con.createStatement();
-			String sql2 = "INSERT INTO `cuenta` (`ID`,`contrasenia`) VALUES ("+ username+");";
+			String sqlCuenta = "INSERT INTO `cuenta` (`ID`,`contrasenia`) VALUES (" + username + " , " + " ' " + password + " ' '"       +");";
             String sql = "INSERT INTO `trabajador` ( `direccion`, `telefono`, `correo`, `puesto`, `edad`, `nombre`, `apellido`, `cuenta`, `constrasenia`) values(" + direccion + ", " + telefono + ", "  + correo + ", "  + puesto + ", "  + edad + ", "   + nombre + ", "   + apellido + ", "  + username + ", " + password +   ");";
             
-			ResultSet result = stat.executeQuery(sql);
+			ResultSet result = stat.executeUpdate(sql);
+			ResultSet resultCuenta = stat.executeUpdate(sqlCuenta);
+			
 			System.out.println("Sí se guard el nuevo trabajador");
 			stat.close();
 			con.close();
