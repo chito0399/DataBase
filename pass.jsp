@@ -71,7 +71,7 @@
                 </div>
             </section>
 
-            <form action="./ShowProducts" method="get">
+            <form action="./showProducts" method="get">
                     <div class="card text-white bg-secondary my-0 ml-5" style="max-width: 18rem;">
                         <h5 class="card-header card-title">Ver productos</h5>
                         <div class="card-body">
