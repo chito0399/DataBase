@@ -1,0 +1,86 @@
+body{
+    font-family: 'Raleway';
+    margin: 0;
+    background-color: #0d77b5;
+}
+
+form{
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.login_img{
+    max-width: 120px;
+    margin: 10% 0 0 0;
+    display: block;
+}
+
+.input{
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid white;
+    font-family: 'Raleway', sans-serif;
+    display: block;
+    /* margin: 20px auto; */
+    max-width: 300px;
+    width: 100%;
+    padding: 8px;
+    color: white;
+    font-size: 18px;
+    box-sizing: border-box;
+}
+
+.input:focus, input:focus{
+    outline: none;
+}
+
+.user_label{
+    color: rgba(255,255,255,0.7);
+    font-size: 12px;
+    display: block;
+    /* margin: -16px auto 20px auto; */
+    max-width: 300px;
+    width: 100%;
+}
+
+.login_button{
+    border: 1px solid white;
+    padding: 8px 18px;
+    border-radius: 6px;
+    color: white;
+    max-width: 300px;
+    width: 100%;
+    display: block;
+    /* margin: 50px auto 0 auto; */
+    text-align: center;
+    box-sizing: border-box;
+    cursor: pointer;
+    transition: all 0.1s ease-in;
+    background-color: transparent;
+}
+
+.login_button:hover{
+    background-color: rgba(6,104,160,0.5);
+}
+
+input#datepicker{
+    background-color: transparent;
+    border-width: 1px;
+    color: white;
+    border-color: transparent;
+    /* margin: 0 auto; */
+}
+
+section#products{
+    max-width: 300px;
+    /* margin: 0 auto; */
+}
+
+input#datepicker:hover{
+    
+    border-width: 1.5px;
+    color: white;
+    border-color: black;
+    /* margin: 0 auto; */
+}
+
