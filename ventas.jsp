@@ -15,7 +15,8 @@
 
     <body>
 
-
+        <h4 class="text-center mt-5 font-weight-bold">Realizar una nueva venta</h4>
+        
         <form action="./NewVenta" method="get" class="mb-5">
 
             <img src="img/venta3.png" class="login_img">
