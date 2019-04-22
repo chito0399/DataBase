@@ -19,7 +19,7 @@
 
         <form action="./RegistroProducto" method="get" class="mt-5">
 
-            <img src="img/product.jpg" alt="">
+            <img src="img/producto.png" alt="">
 
             <input type="text" id="nombre" name="nombre" class="input" required>            
             <span class="user_label">Nombre</span>

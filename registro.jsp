@@ -19,7 +19,7 @@
 
         <form action="./registro" method="get" class="mt-5">
 
-            <img src="img/sign.png" alt="">
+            <img src="img/registro2.png" alt="">
 
             <input type="text" id="nombre" name="nombre" class="input" required>            
             <span class="user_label">Nombre</span>

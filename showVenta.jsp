@@ -5,8 +5,14 @@
 <html>
     <head>
         <title>Nueva Venta</title>
+        <link href="css/show.css" rel="stylesheet">  
     </head>
     <body>
+
+        <br> <br>        
+        <a href="pass.jsp">
+            <p>Menu</p>
+        </a>
 
         <table border="1">
             <tr>
@@ -41,6 +47,6 @@
         <br>
         <br>
         <br>
-        <a href="pass.jsp">Menu</a>
+        
     </body>
 </html>

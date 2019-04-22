@@ -16,7 +16,7 @@
 
         <form action="./Login" method="get">
 
-            <img src="img/marke.jpg" class="login_img">
+            <img src="img/arrow.jpg" class="login_img">
 
             <input type="text" id="username" name="username" class="input">            
             <span class="user_label">Username</span>

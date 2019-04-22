@@ -1,0 +1,32 @@
+body{
+    font-family: 'Raleway';
+    margin: 0;
+    background-color: #0d77b5;
+}
+
+a{
+    outline: none;
+    color: black;
+    margin-left: 50px;
+    margin-top: 50px;    
+}
+
+a p{    
+    font-size: 30px;
+    display: inline;    
+}
+
+p:hover{
+    font-size: 35px;
+}
+
+table{
+    margin: 50px auto 0 auto;
+    color: white;
+    border-color: black;
+}
+
+th, td{
+    padding: 10px;
+}
+

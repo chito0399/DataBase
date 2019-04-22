@@ -18,7 +18,7 @@
 
         <form action="./NewVenta" method="get" class="mb-5">
 
-            <img src="img/venta.png" class="login_img">
+            <img src="img/venta3.png" class="login_img">
 
             <input type="text" id="cliente" name="cliente" class="input mt-4" required>            
             <span class="user_label mt-3">Cliente</span>
